@@ -17,8 +17,11 @@ int main()
     string t_temp;
     getline(cin, t_temp);
 
-    int t = stoi(ltrim(rtrim(t_temp)));
+    int Q = stoi(ltrim(rtrim(t_temp)));
     
+    for (int t_itr = 0; t_itr < Q; t_itr++)
+    {    
+    }
     
     return 0;
 }
