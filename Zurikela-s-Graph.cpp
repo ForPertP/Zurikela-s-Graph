@@ -21,6 +21,7 @@ int main()
     
     for (int t_itr = 0; t_itr < Q; t_itr++)
     {    
+        ;
     }
     
     return 0;
