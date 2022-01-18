@@ -21,7 +21,28 @@ int main()
     
     for (int t_itr = 0; t_itr < Q; t_itr++)
     {    
-        ;
+        string first_multiple_input_temp;
+        getline(cin, first_multiple_input_temp);
+
+        vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+
+        char O = first_multiple_input[0][0];
+        
+        switch (O)
+        {
+            case 'A' :
+            
+                break;
+                
+            case 'B' :
+            
+                break;
+
+            case 'C' :
+            
+                break;
+                
+        }
     }
     
     return 0;
