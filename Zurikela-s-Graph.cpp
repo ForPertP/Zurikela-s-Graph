@@ -45,6 +45,9 @@ int main()
         }
     }
     
+    int result = 0;
+    fout << result << "\n";
+    
     return 0;
 }
 
