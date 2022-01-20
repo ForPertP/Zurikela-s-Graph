@@ -6,8 +6,6 @@
 #include <algorithm>
 using namespace std;
 
-using namespace std;
-
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
@@ -17,7 +15,6 @@ int V[NUMS];
 std::vector<int> adj[NUMS];
 int dir[NUMS][2];
 bool g_b[NUMS];
-
 
 void recursive_check(int a, int b)
 {
@@ -38,8 +35,6 @@ void recursive_check(int a, int b)
 
 int main()
 {
-    //ofstream fout(getenv("OUTPUT_PATH"));
-
     string t_temp;
     getline(cin, t_temp);
 
@@ -94,12 +89,9 @@ int main()
         }
     }
     cout << result << "\n";
-    //fout.close();
 
     return 0;
 }
-
-
 
 
 string ltrim(const string &str) {
