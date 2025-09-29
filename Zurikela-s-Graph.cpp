@@ -1,6 +1,14 @@
 #include <cmath>
 #include <cstdio>
 #include <vector>
+#include <array>
+#include <iostream>
+#include <algorithm>
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
 #include <iostream>
 #include <fstream>
 #include <algorithm>
