@@ -5,13 +5,6 @@
 #include <iostream>
 #include <algorithm>
 
-
-#include <cmath>
-#include <cstdio>
-#include <vector>
-#include <iostream>
-#include <fstream>
-#include <algorithm>
 using namespace std;
 
 string ltrim(const string &);
