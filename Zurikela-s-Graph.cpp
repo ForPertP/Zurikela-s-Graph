@@ -11,6 +11,54 @@ string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
+int main()
+{
+    string t_temp;
+    getline(cin, t_temp);
+    int Q = stoi(ltrim(rtrim(t_temp)));
+
+    TreeDP solver(100000);  
+    int t = 1;    
+
+    for (int t_itr = 0; t_itr < Q; t_itr++)
+    {
+        string first_multiple_input_temp;
+        getline(cin, first_multiple_input_temp);
+
+        vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+        char O = first_multiple_input[0][0];
+        
+        switch (O)
+        {
+            case 'A' :
+            {
+                int a = stoi(ltrim(rtrim(first_multiple_input[1])));
+                solver.node_value[t++] = a;
+            }
+                break;
+                
+            case 'B' :
+            {
+                int a = stoi(ltrim(rtrim(first_multiple_input[1])));
+                int b = stoi(ltrim(rtrim(first_multiple_input[2])));
+                solver.adj[a].push_back(b);
+                solver.adj[b].push_back(a);
+            }
+                break;
+
+            case 'C' :
+            {
+                int a = stoi(ltrim(rtrim(first_multiple_input[1])));
+                solver.dfs(a, a);
+                solver.node_value[t++] = max(solver.dp[a][0], solver.dp[a][1]);
+            }
+                break;
+        }
+    }
+
+}
+
+
 
 string ltrim(const string &str) {
     string s(str);
