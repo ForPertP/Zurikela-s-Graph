@@ -11,6 +11,36 @@ string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
+struct TreeDP {
+    int n;
+    vector<int> node_value;
+    vector<vector<int>> adj;
+    vector<array<int,2>> dp;
+    vector<bool> visited;
+
+    TreeDP(int size) {
+        n = size;
+        node_value.assign(size + 1, 0);
+        adj.assign(size + 1, {});
+        dp.assign(size + 1, {0,0});
+        visited.assign(size + 1, false);
+    }
+
+    void dfs(int u, int parent) {
+        visited[u] = true;
+        dp[u][0] = 0;
+        dp[u][1] = node_value[u];
+
+        for (auto v : adj[u]) {
+            if (v == parent) continue;
+            dfs(v, u);
+            dp[u][0] += max(dp[v][0], dp[v][1]);
+            dp[u][1] += dp[v][0];
+        }
+    }
+};
+
+
 int main()
 {
     string t_temp;
