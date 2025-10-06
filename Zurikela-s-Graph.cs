@@ -32,3 +32,58 @@ class TreeDP {
         }
     }
 }
+
+
+
+
+class Solution {
+    static string LTrim(string s) {
+        return s.TrimStart();
+    }
+
+    static string RTrim(string s) {
+        return s.TrimEnd();
+    }
+
+    static List<string> Split(string s) {
+        var parts = new List<string>();
+        foreach (var token in s.Split(' ', StringSplitOptions.RemoveEmptyEntries)) {
+            parts.Add(token);
+        }
+        return parts;
+    }
+
+    static void Main(string[] args) {
+        int Q = int.Parse(LTrim(RTrim(Console.ReadLine())));
+        TreeDP solver = new TreeDP(100000);
+
+        int t = 1;
+        for (int i = 0; i < Q; i++) {
+            string line = Console.ReadLine();
+            var parts = Split(RTrim(line));
+            char O = parts[0][0];
+
+            switch (O) {
+                case 'A': {
+                    int a = int.Parse(parts[1]);
+                    solver.nodeValue[t++] = a;
+                    break;
+                }
+                case 'B': {
+                    int a = int.Parse(parts[1]);
+                    int b = int.Parse(parts[2]);
+                    solver.adj[a].Add(b);
+                    solver.adj[b].Add(a);
+                    break;
+                }
+                case 'C': {
+                    int a = int.Parse(parts[1]);
+                    solver.Dfs(a, a);
+                    solver.nodeValue[t++] = Math.Max(solver.dp[a][0], solver.dp[a][1]);
+                    break;
+                }
+            }
+        }
+
+    }
+}
