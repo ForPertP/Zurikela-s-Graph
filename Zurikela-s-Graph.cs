@@ -34,8 +34,6 @@ class TreeDP {
 }
 
 
-
-
 class Solution {
     static string LTrim(string s) {
         return s.TrimStart();
@@ -85,5 +83,14 @@ class Solution {
             }
         }
 
+        int result = 0;
+        for (int i = 1; i <= t; i++) {
+            if (!solver.visited[i]) {
+                solver.Dfs(i, i);
+                result += Math.Max(solver.dp[i][0], solver.dp[i][1]);
+            }
+        }
+
+        Console.WriteLine(result);
     }
 }
