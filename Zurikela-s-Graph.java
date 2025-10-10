@@ -1,9 +1,17 @@
 import java.io.*;
 import java.util.*;
 
+
 public class Solution {
 
-    public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    static class TreeDP {
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int Q = Integer.parseInt(br.readLine().trim());
+
+        TreeDP solver = new TreeDP(100000);
+        int t = 1;
     }
 }
