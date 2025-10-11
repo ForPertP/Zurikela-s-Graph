@@ -16,7 +16,7 @@ public class Solution {
 
         for (int i = 0; i < Q; i++)
         {
-            String line = 
+            String[] input = br.readLine().trim().split(" ");
         }
     
     
