@@ -13,5 +13,12 @@ public class Solution {
 
         TreeDP solver = new TreeDP(100000);
         int t = 1;
+
+        for (int i = 0; i < Q; i++)
+        {
+            String line = 
+        }
+    
+    
     }
 }
