@@ -20,6 +20,31 @@ public class Solution {
             char op = input[0].charAt(0);
         }
     
+        for (int i = 0; i < Q; i++) {
+        String[] input = br.readLine().trim().split(" ");
+        char op = input[0].charAt(0);
+        
+        switch (op) {
+            case 'A': {
+                int a = Integer.parseInt(input[1]);
+                solver.nodeValue[t++] = a;
+                break;
+            }
+            case 'B': {
+                int a = Integer.parseInt(input[1]);
+                int b = Integer.parseInt(input[2]);
+                solver.adj.get(a).add(b);
+                solver.adj.get(b).add(a);
+                break;
+            }
+            case 'C': {
+                int a = Integer.parseInt(input[1]);
+                solver.dfs(a, a);
+                solver.nodeValue[t++] = Math.max(solver.dp[a][0], solver.dp[a][1]);
+                break;
+            }
+        }
+        }
     
     }
 }
