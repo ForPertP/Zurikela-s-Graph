@@ -5,7 +5,7 @@ import java.util.*;
 public class Solution {
 
     static class TreeDP {
-          int n;
+        int n;
         int[] nodeValue;
         List<List<Integer>> adj;
         int[][] dp;
