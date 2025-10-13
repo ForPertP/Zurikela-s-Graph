@@ -10,7 +10,6 @@ public class Solution {
         List<List<Integer>> adj;
         int[][] dp;
         boolean[] visited;
-        
     }
 
     public static void main(String[] args) throws IOException {
@@ -50,7 +49,5 @@ public class Solution {
                 break;
             }
         }
-        }
-    
     }
 }
