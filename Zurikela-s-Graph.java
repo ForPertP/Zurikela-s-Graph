@@ -10,6 +10,17 @@ public class Solution {
         List<List<Integer>> adj;
         int[][] dp;
         boolean[] visited;
+
+        TreeDP(int size) {
+        n = size;
+        nodeValue = new int[size + 1];
+        adj = new ArrayList<>(size + 1);
+        for (int i = 0; i <= size; i++) {
+            adj.add(new ArrayList<>());
+        }
+        dp = new int[size + 1][2];
+        visited = new boolean[size + 1];
+        }        
     }
 
     public static void main(String[] args) throws IOException {
