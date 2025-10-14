@@ -16,7 +16,7 @@ public class Solution {
             nodeValue = new int[size + 1];
             adj = new ArrayList<>(size + 1);
             for (int i = 0; i <= size; i++) {
-            adj.add(new ArrayList<>());
+                adj.add(new ArrayList<>());
             }
             dp = new int[size + 1][2];
             visited = new boolean[size + 1];
