@@ -20,7 +20,21 @@ public class Solution {
             }
             dp = new int[size + 1][2];
             visited = new boolean[size + 1];
-        }        
+        }       
+
+
+        void dfs(int u, int parent) {
+            visited[u] = true;
+            dp[u][0] = 0;
+            dp[u][1] = nodeValue[u];
+            
+            for (int v : adj.get(u)) {
+                if (v == parent) continue;
+                dfs(v, u);
+                dp[u][0] += Math.max(dp[v][0], dp[v][1]);
+                dp[u][1] += dp[v][0];
+            }        
+        }
     }
 
     public static void main(String[] args) throws IOException {
